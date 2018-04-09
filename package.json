@@ -1,0 +1,22 @@
+{
+  "name": "dl-workbench",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack"
+  },
+  "dependencies": {
+    "element-ui": "^2.2.2",
+    "vue": "^2.5.16"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "ts-loader": "^4.1.0",
+    "typescript": "^2.7.2",
+    "vue-loader": "^14.2.2",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.2.0",
+    "webpack-cli": "^2.0.13"
+  }
+}
