@@ -4,6 +4,9 @@
     <Service/>
     <Model/>
     <DataClass/>
+    <div class="footer">
+      MxM © 2018
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -32,6 +35,10 @@ export default Vue.extend({
     color: #efdab9;
     font-weight: 100;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  .footer {
+    padding: 36px;
+    text-align: center;
   }
 </style>
 

@@ -47,7 +47,7 @@ export default Vue.extend({
   name: "Intro",
   data() {
     return {
-      faces: ['0', '10', '20', '30', '40', '50', '60']
+      faces: ['0', '10', '140', '120', '40', '180', '50']
     }
   }
 })
