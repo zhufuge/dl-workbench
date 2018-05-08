@@ -3,7 +3,7 @@
     <div class="header"><div>基于<strong>深度学习</strong>的图像识别</div></div>
     <div class="line">
       <div class="img-container" v-for="id in faces" :key="id">
-        <img :src="'assets/faces/face'+id+'.png'" alt="" srcset="" />
+        <img :src="'assets/faces/face'+id+'.png'" alt="" />
       </div>
     </div>
     <div class="circles-container">
@@ -37,7 +37,7 @@
     <div class="features">
       <a class="link" href="#service">使用识别服务</a>
       <a class="link" href="#model">神经网络模型图</a>
-      <a class="link">数据类别</a>
+      <a class="link" href="#data-class">数据类别</a>
     </div>
   </section>  
 </template>

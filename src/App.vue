@@ -3,6 +3,7 @@
     <Intro/>
     <Service/>
     <Model/>
+    <DataClass/>
   </div>
 </template>
 <script lang="ts">
@@ -11,6 +12,7 @@ import Vue from 'vue'
 import Intro from './components/Intro.vue'
 import Service from './components/Service.vue'
 import Model from './components/Model.vue'
+import DataClass from './components/DataClass.vue'
 
 export default Vue.extend({
   name: 'App',
@@ -18,6 +20,7 @@ export default Vue.extend({
     Intro,
     Service,
     Model,
+    DataClass,
   }
 })
 </script>
