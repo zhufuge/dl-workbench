@@ -48,8 +48,13 @@ module.exports = {
     }
   },
   devServer: {
+    contentBase: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
+    host: 'localhost',
+    port: 3000,
+    compress: true,
+    clientLogLevel: 'none',
     historyApiFallback: true,
-    noInfo: true
   },
   performance: {
     hints: false

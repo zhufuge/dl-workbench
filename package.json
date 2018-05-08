@@ -4,11 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "dev": "webpack-dev-server"
   },
   "dependencies": {
     "element-ui": "^2.2.2",
-    "vue": "^2.5.16"
+    "vue": "^2.5.16",
+    "webpack-dev-server": "^3.1.4"
   },
   "devDependencies": {
     "css-loader": "^0.28.11",
