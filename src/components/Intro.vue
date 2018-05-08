@@ -36,7 +36,7 @@
     </div>
     <div class="features">
       <a class="link" href="#service">使用识别服务</a>
-      <a class="link">神经网络模型图</a>
+      <a class="link" href="#model">神经网络模型图</a>
       <a class="link">数据类别</a>
     </div>
   </section>  

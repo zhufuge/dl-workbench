@@ -2,6 +2,7 @@
   <div class="app-container">
     <Intro/>
     <Service/>
+    <Model/>
   </div>
 </template>
 <script lang="ts">
@@ -9,12 +10,14 @@ import Vue from 'vue'
 
 import Intro from './components/Intro.vue'
 import Service from './components/Service.vue'
+import Model from './components/Model.vue'
 
 export default Vue.extend({
   name: 'App',
   components: {
     Intro,
     Service,
+    Model,
   }
 })
 </script>
