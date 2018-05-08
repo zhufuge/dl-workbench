@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="app-container">
     <Intro/>
     <Service/>
   </div>
@@ -23,10 +23,9 @@ export default Vue.extend({
     background: #343233;
     margin: 0;
     padding: 0;
+    color: #efdab9;
+    font-weight: 100;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-  .container {
-    height: 1000px;
   }
 </style>
 

@@ -35,7 +35,7 @@
       </p>
     </div>
     <div class="features">
-      <a class="link">使用识别服务</a>
+      <a class="link" href="#service">使用识别服务</a>
       <a class="link">神经网络模型图</a>
       <a class="link">数据类别</a>
     </div>
@@ -59,7 +59,6 @@ export default Vue.extend({
     background-size: 100% 1000px;
     background-position: center -120px;
     height: 800px;
-    color: #efdab9;
   }
   .header {
     font-size: 32px;
@@ -206,6 +205,8 @@ export default Vue.extend({
     border: 1px solid #4e4b4d;
     padding: 8px 24px;
     color: #ffd152;
+    text-decoration: none;
+    cursor: pointer;
   }
   .link:hover {
     color: #ebac00;
