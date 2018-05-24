@@ -55,6 +55,7 @@ export default Vue.extend({
   }
   .preview {
     padding: 12px;
+    width: 100%;
   }
   .preview > h3 {
     margin: 8px 16px;
@@ -63,7 +64,6 @@ export default Vue.extend({
   }
   .upload-preview {
     overflow: hidden;
-    width: 500px;
     height: 420px;
     background: white;
     margin: 12px;

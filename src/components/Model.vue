@@ -28,7 +28,8 @@ export default Vue.extend({
   }
   .container {
     display: flex;
-    padding: 50px 0 0 300px;
+    justify-content: end;
+    padding: 50px 0 0 0;
   }
   .intro {
     width: 250px;
@@ -51,7 +52,7 @@ export default Vue.extend({
   }
   .img-container {
     height: 400px;
-    width: 728px;
+    width: 100%;
     padding: 6px;
     border-radius: 6px;
     border: 1px solid #aaa;

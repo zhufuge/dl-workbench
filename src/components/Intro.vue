@@ -63,7 +63,7 @@ export default Vue.extend({
   .header {
     font-size: 32px;
     font-style: italic;
-    padding: 40px 120px;
+    padding: 16px 120px 40px;
     font-weight: 100;
   }
   .line {
@@ -165,12 +165,12 @@ export default Vue.extend({
   }
   .tip-slash {
     height: 2px;
-    width: 114px;
+    width: 113px;
     background: #ffea73;
     transform: rotate(-30deg);
     position: relative;
     top: 88px;
-    left: 253px;
+    left: 255px;
     border-radius: 1px;
   }
   .intro-content {
