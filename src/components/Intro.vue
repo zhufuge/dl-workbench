@@ -210,5 +210,7 @@ export default Vue.extend({
   }
   .link:hover {
     color: #ebac00;
+    border-color: #666;
+    background-color: #3333;
   }
 </style>

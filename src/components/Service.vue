@@ -24,6 +24,9 @@
         <h2>使用识别服务</h2>
         <p>上传需要进行识别的图像数据样本，服务器将会使用神经网络模型进行识别，最后返回该数据样本所属的类别。</p>
         <p>目前只能识别属于同一数据集中的样本，未来可能会实现以自定义数据集或自定义新模型来训练和预测的强大功能。</p>
+        <p class="more">
+          <router-link class="more-link" to="/service">体验更多服务...</router-link>
+        </p>
       </div>
     </div>
   </section>
@@ -139,5 +142,15 @@ export default Vue.extend({
   .intro {
     width: 250px;
     margin: 120px 42px;
+  }
+  .more {
+    margin: 24px 0;
+  }
+  .more-link {
+    font-size: 20px;
+    color: #ffd152;
+  }
+  .more-link:hover {
+    color: #ffc31f;
   }
 </style>

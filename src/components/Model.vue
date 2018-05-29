@@ -5,6 +5,9 @@
         <h2>神经网络模型图</h2>
         <p>以上服务使用的是卷积神经网络模型，该模型的结构如图所示。</p>
         <p>根据该模型图，以 Keras 为前端并以 TensorFlow 为后端搭建该模型。使用数据进行训练并用训练好的模型进行对新样本的预测。</p>
+        <p class="more">
+          <router-link class="more-link" to="/docs">查看更多文档...</router-link>
+        </p>
       </div>
       <div class="model-show">
         <div class="img-container">
@@ -63,5 +66,15 @@ export default Vue.extend({
   }
   .img-container img {
     border-radius: 3px;
+  }
+  .more {
+    margin: 24px 0;
+  }
+  .more-link {
+    font-size: 20px;
+    color: #ffd152;
+  }
+  .more-link:hover {
+    color: #ffc31f;
   }
 </style>

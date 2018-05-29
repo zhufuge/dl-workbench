@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server"
   },
   "dependencies": {
-    "element-ui": "^2.2.2",
+    "koa": "^2.5.1",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1"
   },

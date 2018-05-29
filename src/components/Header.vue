@@ -2,9 +2,9 @@
   <nav class="top-bar" aria-label="Primary">
     <div class="wrapper no-pad">
       <ul class="navigation">
-        <li><a class="" href="/">首页</a></li>
-        <li><a class="" href="/service">产品服务</a></li>
-        <li><a class="" href="/docs">文档</a></li>
+        <li><router-link to="/">首页</router-link></li>
+        <li><router-link to="/service">产品服务</router-link></li>
+        <li><router-link to="/docs">文档</router-link></li>
       </ul>
       <div class="top-bar-right">
           <a href="https://github.com/zhufuge/DeepLearning">
