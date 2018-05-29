@@ -5,10 +5,13 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "start": "node index.js"
   },
   "dependencies": {
     "koa": "^2.5.1",
+    "koa-router": "^7.4.0",
+    "koa-static": "^4.0.3",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1"
   },
