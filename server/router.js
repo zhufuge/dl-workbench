@@ -1,14 +1,14 @@
 const fs = require('fs')
 const path = require('path')
-const KoaRouter = require('koa-router')
-const KoaStatic = require('koa-static')
+const Router = require('koa-router')
+const koaStatic = require('koa-static')
 
 const readFileAsync = require('util').promisify(fs.readFile)
 const { contentType } = require('./helper')
 
 const PUBLIC_DIR = path.join(__dirname, '../dist')
 
-const router = new KoaRouter()
+const router = new Router()
 
 function sendFile(ctx, file) {
   return readFileAsync(file).then(data => {
@@ -22,9 +22,11 @@ function sendFile(ctx, file) {
 }
 const home = (ctx) => sendFile(ctx, path.join(PUBLIC_DIR, '/index.html'))
 
-router
-  .get('/', home)
-  .all('*', KoaStatic(PUBLIC_DIR))
+
+router.get('/', home)
+require('./upload')(router)
+router.all('*', koaStatic(PUBLIC_DIR))
+
 
 module.exports = (app) => app
   .use(router.routes())

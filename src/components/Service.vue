@@ -5,10 +5,25 @@
         <div class="preview">
           <h3>上传需要识别的图片</h3>
           <div class="upload-preview">
-            <a class="upload-img">
+            <div
+              class="preview-img"
+              v-for="image of images"
+              :key="image"
+            >
+            <img :src="image" alt=""/>
+            </div>
+            <div class="upload-img" @click="handleBoxClick">
               <p>点击加载图片</p>
               <p>或将图片拖到此处</p>
-            </a>
+            </div>
+            <input
+              ref="image_input"
+              type="file"
+              accept="image/*"
+              multiple
+              id="upload_file"
+              @change="handleImageChange"
+              style="display:none"/>
           </div>
         </div>
         <div class="operation">
@@ -17,7 +32,7 @@
             <div class="result">识别结果：</div>
             <div class="other">其他信息：</div>
           </div>
-          <a class="upload-button">上传图片并识别</a>
+          <a class="upload-button" @click="uploadFile">上传图片并识别</a>
         </div>
       </div>
       <div class="intro">
@@ -33,8 +48,43 @@
 </template>
 <script lang="ts">
 import Vue from 'vue'
+import Ajax from '../common/Ajax'
 export default Vue.extend({
-  name: "Service"
+  name: "Service",
+  data() {
+    return {
+      files: [],
+      images: [],
+    }
+  },
+  methods: {
+    handleBoxClick() {
+      if (this.$refs['image_input']) this.$refs['image_input'].click()
+    },
+    handleImageChange(e) {
+      const files = e.target.files || e.dataTransfer.files
+      if (!files.length) return
+
+      for (let file of files) {
+        this.files.push(file)
+      }
+      this.readImages(files)
+    },
+    readImages(files, i=0) {
+      if (files.length <= i) return
+      const reader = new FileReader()
+      reader.onload = (e) => {
+        this.images.push(e.target.result)
+        this.readImages(files, i + 1)
+      }
+      reader.readAsDataURL(files[i])
+    },
+    uploadFile() {
+      for (let file of this.files) {
+        Ajax('upload-image', file)
+      }
+    }
+  } 
 })
 </script>
 <style scoped>
@@ -66,12 +116,29 @@ export default Vue.extend({
     font-weight: 500;
   }
   .upload-preview {
-    overflow: hidden;
-    height: 420px;
+    height: 396px;
     background: white;
     margin: 12px;
     border-radius: 4px;
     box-shadow: 0 0 6px #888 inset;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 12px;
+  }
+  .preview-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 164px;
+    width: 135px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    margin: 6px 8px 0;
+    cursor: pointer;
+    font-size: 14px;
+    color: #666;
+    overflow: hidden;
   }
   .upload-img {
     display: flex;
@@ -82,10 +149,11 @@ export default Vue.extend({
     width: 135px;
     border-radius: 6px;
     border: 2px dashed #aaa;
-    margin: 24px;
+    margin: 6px 8px 0;
     cursor: pointer;
     font-size: 14px;
     color: #666;
+    overflow: hidden;
   }
   .upload-img > p {
     margin: 0;
