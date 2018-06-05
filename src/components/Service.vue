@@ -81,7 +81,9 @@ export default Vue.extend({
     },
     uploadFile() {
       for (let file of this.files) {
-        Ajax('upload-image', file)
+        Ajax('upload-image', file).then((res) => {
+          console.log(res)
+        })
       }
     }
   } 

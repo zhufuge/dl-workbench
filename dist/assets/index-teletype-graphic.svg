@@ -1,0 +1,18 @@
+<svg width="1480" height="669" viewBox="0 0 1480 669" xmlns="http://www.w3.org/2000/svg"><div xmlns="" id="saka-gui-root"><div><div><style/></div></div></div>
+    <g fill="none" fill-rule="evenodd">
+        <g opacity=".245">
+            <path d="M475 653h24v16h-24v-16zm-152 0h120v16H323v-16zm-64 0h32v16h-32v-16zm-96 0h64v16h-64v-16zm-48 0h16v16h-16v-16z" fill="#659CC8"/>
+            <path d="M320 589h48v32h-48v-32zm-80 0h48v32h-48v-32zm-112 0h80v32h-80v-32zm-48 0h16v32H80v-32zm-80 0h48v32H0v-32z" fill="#78AF9F"/>
+        </g>
+        <g opacity=".067">
+            <path d="M525 112h24v48h-24v-48zm-208 0h176v48H317v-48zm-128 0h96v48h-96v-48zm-56 0h24v48h-24v-48z" fill="#DDA032"/>
+            <path d="M339 48h24v32h-24V48zm-128 0h96v32h-96V48zm-96 0h64v32h-64V48zm-64 0h32v32H51V48z" fill="#D36E2D"/>
+            <path d="M467 0h32v16h-32V0zM275 0h160v16H275V0zm-48 0h16v16h-16V0zm-96 0h64v16h-64V0z" fill="#C13F21"/>
+        </g>
+        <path d="M496 380h984v8H496v-8zm-76 0h60v8h-60v-8zm-32 0h16v8h-16v-8zm-48 0h32v8h-32v-8zm-24 0h8v8h-8v-8z" fill="#659CC8"/>
+        <path d="M408 348h1000v16H408v-16zm-40 0h24v16h-24v-16zm-56 0h40v16h-40v-16zm-24 0h8v16h-8v-16zm-40 0h24v16h-24v-16z" fill="#78AF9F"/>
+        <path d="M380 308h1100v24H380v-24zm-104 0h88v24h-88v-24zm-64 0h48v24h-48v-24zm-28 0h12v24h-12v-24z" fill="#DDA032"/>
+        <path d="M412 276h910v16H412v-16zm-64 0h48v16h-48v-16zm-48 0h32v16h-32v-16zm-32 0h16v16h-16v-16z" fill="#D36E2D"/>
+        <path d="M402 252h1040v8H402v-8zm-96 0h80v8h-80v-8zm-24 0h8v8h-8v-8zm-48 0h32v8h-32v-8z" fill="#C13F21"/>
+    </g>
+</svg>

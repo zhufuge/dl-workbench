@@ -3,7 +3,7 @@
     <div class="header"><div>基于<strong>深度学习</strong>的图像识别</div></div>
     <div class="line">
       <div class="img-container" v-for="id in faces" :key="id">
-        <img :src="'assets/faces/face'+id+'.png'" alt="" />
+        <img :src="'assets/surface/'+id+'.jpg'" alt="" />
       </div>
     </div>
     <div class="circles-container">
@@ -19,7 +19,7 @@
         <img class="circle" src="assets/index-portal-blue-semi.svg" alt="Index portal blue semi"/>
         <img class="circle" src="assets/index-portal-blue.svg" alt="Index portal blue"/>
         <div class="tip-box">
-          This is Alice.
+          缺陷：黑斑
         </div>
         <div class="tip-slash"></div>
       </div>
@@ -47,7 +47,7 @@ export default Vue.extend({
   name: "Intro",
   data() {
     return {
-      faces: ['0', '10', '140', '120', '40', '180', '50']
+      faces: ['1', '2', '3', '4', '5', '6', '7']
     }
   }
 })
@@ -78,12 +78,16 @@ export default Vue.extend({
     overflow: hidden;
   }
   .img-container {
-    margin: auto 36px;
-    height: 160px;
-    width: 131px;
+    margin: auto 25px;
+    height: 150px;
+    width: 150px;
     padding: 6px;
     border-radius: 6px;
     border: 2px solid #4e4b4d;
+  }
+  .img-container > img {
+    width: 150px;
+    height: 150px;
   }
   .img-container:nth-child(3) {
     border: 3px solid #ffea73;
@@ -152,13 +156,13 @@ export default Vue.extend({
     animation-duration: 120s;
   }
   .tip-box {
-	  position: absolute;
-	  top: 0px;
-	  left: 360px;
+    position: absolute;
+    top: 15px;
+    left: 360px;
     width: 300px;
-    height: 60px;
+    height: 48px;
     color: #ffea73;
-    font-size: 48px;
+    font-size: 36px;
     border-bottom: 2px solid;
     font-weight: 100;
     text-align: center;
@@ -169,7 +173,7 @@ export default Vue.extend({
     background: #ffea73;
     transform: rotate(-30deg);
     position: relative;
-    top: 88px;
+    top: 91px;
     left: 255px;
     border-radius: 1px;
   }
