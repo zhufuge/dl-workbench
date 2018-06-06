@@ -13,8 +13,9 @@
     <div class="main">
       <h2>{{selected}}</h2>
       <div class="content">
-        <Upload v-if="selected === '图像识别'"/>
-        <Result v-if="selected === '图像识别'"/>
+        <upload v-if="selected === '图像识别'"/>
+        <result v-if="selected === '图像识别'"/>
+        <history v-if="selected === '历史记录'"/>
       </div>
     </div>
   </div>
@@ -23,16 +24,19 @@
 import Vue from 'vue'
 import Upload from '../components/Upload.vue'
 import Result from '../components/Result.vue'
+import History from '../components/History.vue'
+
 export default Vue.extend({
   name: 'Service',
   components: {
     Upload,
     Result,
+    History,
   },
   data() {
     return {
       list: ['图像识别', '历史记录', '类别展示'],
-      selected: '图像识别',
+      selected: '历史记录'//'图像识别',
     }
   },
   methods: {
