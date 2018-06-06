@@ -133,14 +133,14 @@ export default Vue.extend({
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 145px;
-    width: 145px;
+    height: 144px;
+    width: 144px;
     border-radius: 6px;
     border: 1px solid #aaa;
     margin: 16px 16px 0;
     cursor: pointer;
     font-size: 14px;
-    color: #666;
+    color: #ccc;
     overflow: hidden;
   }
   .upload-img {
@@ -151,6 +151,7 @@ export default Vue.extend({
   }
   .upload-img:hover {
     border-color: #f5d683;
+    color: #fff;
   }
   .upload-img:active {
     border-color: #d3b972;

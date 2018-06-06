@@ -126,14 +126,16 @@ export default Vue.extend({
     display: flex;
     flex-wrap: wrap;
     padding: 12px;
+    overflow: hidden;
   }
-  .preview-img {
+  .preview-img,
+  .upload-img {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 164px;
-    width: 135px;
+    height: 136px;
+    width: 136px;
     border-radius: 6px;
     border: 1px solid #aaa;
     margin: 6px 8px 0;
@@ -143,19 +145,7 @@ export default Vue.extend({
     overflow: hidden;
   }
   .upload-img {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 164px;
-    width: 135px;
-    border-radius: 6px;
     border: 2px dashed #aaa;
-    margin: 6px 8px 0;
-    cursor: pointer;
-    font-size: 14px;
-    color: #666;
-    overflow: hidden;
   }
   .upload-img > p {
     margin: 0;

@@ -55,8 +55,6 @@ export default Vue.extend({
   .img-container > img {
     width: 150px;
     height: 150px;
-  }
-  .img-container > img {
     border-radius: 3px;
   }
 </style>
