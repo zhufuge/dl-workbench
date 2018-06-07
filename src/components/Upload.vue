@@ -30,7 +30,8 @@
             style="display:none"/>
         </div>
         <div class="operation">
-          <a class="upload-button" @click="uploadFile">上传图片并识别</a>
+          <a class="button" @click="uploadFile">上传图片并识别</a>
+          <a class="button" @click="uploadFile">清空</a>
         </div>
       </div>
     </div>
@@ -161,10 +162,10 @@ export default Vue.extend({
     display: flex;
     justify-content: flex-end;
   }
-  .upload-button {
+  .button {
     width: 144px;
     height: 42px;
-    margin: 10px 0 0;
+    margin: 10px 0 0 24px;
     border-radius: 3px;
     background: #ffd152;
     display: flex;
@@ -173,11 +174,11 @@ export default Vue.extend({
     cursor: pointer;
     color: #333;
   }
-  .upload-button:hover {
+  .button:hover {
     background: #ffc31f;
     color: #333;
   }
-  .upload-button:active {
+  .button:active {
     background: #be9218;
   }
 </style>

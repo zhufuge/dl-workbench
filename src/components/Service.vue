@@ -28,11 +28,20 @@
         </div>
         <div class="operation">
           <div class="bench">
-            <div class="tip">提示信息：</div>
-            <div class="result">识别结果：</div>
-            <div class="other">其他信息：</div>
+            <div class="result">
+              <span>识别结果：</span>
+              <div class="result-item" v-for="item of result" :key="item.id">
+                <img :src="images[item.id]" />
+                <div>
+                  <div>识别为：</div>
+                  <div><strong>{{item.class}}</strong></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <a class="upload-button" @click="uploadFile">上传图片并识别</a>
+          <a class="button" @click="uploadFile">上传图片并识别</a>
+          <div class="divider"></div>
+          <a class="button" @click="cleanFile">清空</a>
         </div>
       </div>
       <div class="intro">
@@ -55,6 +64,7 @@ export default Vue.extend({
     return {
       files: [],
       images: [],
+      result: [{ id: 0, class: '丝光皱条' }, { id: 1, class: '黄斑' }],
     }
   },
   methods: {
@@ -85,6 +95,10 @@ export default Vue.extend({
           console.log(res)
         })
       }
+    },
+    cleanFile() {
+      this.files = []
+      this.images = []
     }
   } 
 })
@@ -165,7 +179,7 @@ export default Vue.extend({
     border-radius: 12px;
   }
   .bench {
-    height: 350px;
+    height: 280px;
     border-bottom: 1px solid #aaa;
   }
   .tip {
@@ -174,14 +188,13 @@ export default Vue.extend({
     border-bottom: 1px solid #aaa;
   }
   .result {
-    height: 100px;
     padding: 12px;
-    border-bottom: 1px solid #aaa;
+    overflow: hidden;
   }
   .other {
     padding: 12px;
   }
-  .upload-button {
+  .button {
     width: 207px;
     height: 50px;
     margin: 10px;
@@ -192,12 +205,17 @@ export default Vue.extend({
     align-items: center;
     cursor: pointer;
   }
-  .upload-button:hover {
+  .button:hover {
     background: #ffc31f;
     color: #333;
   }
-  .upload-button:active {
+  .button:active {
     background: #be9218;
+  }
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: #aaa;
   }
   .intro {
     width: 250px;
@@ -212,5 +230,14 @@ export default Vue.extend({
   }
   .more-link:hover {
     color: #ffc31f;
+  }
+  .result-item {
+    display: flex;
+    margin: 6px 12px;
+  }
+  .result-item > img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
   }
 </style>

@@ -16,6 +16,8 @@
         <upload v-if="selected === '图像识别'"/>
         <result v-if="selected === '图像识别'"/>
         <history v-if="selected === '历史记录'"/>
+        <class-show v-if="selected === '类别展示'"/>
+        <config v-if="selected === '模型配置'"/>
       </div>
     </div>
   </div>
@@ -25,6 +27,8 @@ import Vue from 'vue'
 import Upload from '../components/Upload.vue'
 import Result from '../components/Result.vue'
 import History from '../components/History.vue'
+import ClassShow from '../components/ClassShow.vue'
+import Config from '../components/Config.vue'
 
 export default Vue.extend({
   name: 'Service',
@@ -32,11 +36,13 @@ export default Vue.extend({
     Upload,
     Result,
     History,
+    ClassShow,
+    Config,
   },
   data() {
     return {
-      list: ['图像识别', '历史记录', '类别展示'],
-      selected: '历史记录'//'图像识别',
+      list: ['图像识别', '模型配置', '历史记录', '类别展示'],
+      selected: '模型配置'//'图像识别',
     }
   },
   methods: {

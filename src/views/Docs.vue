@@ -13,21 +13,24 @@
     <div class="main">
       <h2>{{selected}}</h2>
       <div class="content">
-        <div v-html="content"></div>
+        <doc-tabs :tab="selected"/>
       </div>
     </div>
   </div>
 </template>
 <script lang="ts">
 import Vue from 'vue'
-import docs from '../common/docs'
+import DocTabs from '../components/DocTabs.vue'
+
 export default Vue.extend({
   name: 'Docs',
+  components: {
+    DocTabs,
+  },
   data() {
     return {
       list: ['文档', '快速教程', '使用说明', '核心业务层介绍', '服务器介绍', '前端介绍'],
       selected: '文档',
-      content: docs,
     }
   },
   methods: {
