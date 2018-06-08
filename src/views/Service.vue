@@ -42,7 +42,7 @@ export default Vue.extend({
   data() {
     return {
       list: ['图像识别', '模型配置', '历史记录', '类别展示'],
-      selected: '模型配置'//'图像识别',
+      selected: '图像识别',
     }
   },
   methods: {
