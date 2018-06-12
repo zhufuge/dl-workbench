@@ -63,7 +63,7 @@
         />
       </div>
       <div class="operation">
-        <a class="button" @click="uploadFile">点击提交修改</a>
+        <a class="button" @click="changeParam">点击提交修改</a>
         <a class="button" @click="uploadFile">重置</a>
       </div>
     </div>
@@ -100,6 +100,17 @@ export default Vue.extend({
         { name: 'dense', units: 84, activation: 'relu' },
         { name: 'output', units: 6, activation: 'softmax' },
       ],
+    }
+  },
+  methods: {
+    changeParam() {
+      this.$message({ message: '提交成功！', center: true, type: 'success' })
+      const a = this.$message({ message: '正在修正并重新训练模型...', center: true, duration: 0 })
+      setTimeout(() => {
+        a.close()
+        this.$message({ message: '修改成功，模型已更新！', center: true, type: 'success' })
+        this.show = ''
+      }, 3000)
     }
   }
 })

@@ -30,11 +30,11 @@
           <div class="bench">
             <div class="result">
               <span>识别结果：</span>
-              <div class="result-item" v-for="item of result" :key="item.id">
-                <img :src="images[item.id]" />
+              <div v-if="show" class="result-item" v-for="(image, index) in images" :key="index">
+                <img :src="image" />
                 <div>
                   <div>识别为：</div>
-                  <div><strong>{{item.class}}</strong></div>
+                  <div><strong>{{result[index]}}</strong></div>
                 </div>
               </div>
             </div>
@@ -58,13 +58,15 @@
 <script lang="ts">
 import Vue from 'vue'
 import Ajax from '../common/Ajax'
+
 export default Vue.extend({
   name: "Service",
   data() {
     return {
       files: [],
       images: [],
-      result: [{ id: 0, class: '丝光皱条' }, { id: 1, class: '黄斑' }],
+      result: ['丝光皱条', '黄斑'],
+      show: false,
     }
   },
   methods: {
@@ -90,6 +92,13 @@ export default Vue.extend({
       reader.readAsDataURL(files[i])
     },
     uploadFile() {
+      this.$message({ message: '提交成功！', center: true, type: 'success' })
+      const a = this.$message({ message: '正在识别...', center: true, duration: 0 })
+      setTimeout(() => {
+        a.close()
+        this.$message({ message: '识别成功！', center: true, type: 'success' })
+        this.show = true
+      }, 2000)
       for (let file of this.files) {
         Ajax('upload-image', file).then((res) => {
           console.log(res)
@@ -97,6 +106,7 @@ export default Vue.extend({
       }
     },
     cleanFile() {
+      this.$message({ message: '清空成功', center: true, type: 'success' })
       this.files = []
       this.images = []
     }

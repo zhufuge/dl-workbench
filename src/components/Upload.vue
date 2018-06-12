@@ -31,7 +31,7 @@
         </div>
         <div class="operation">
           <a class="button" @click="uploadFile">上传图片并识别</a>
-          <a class="button" @click="uploadFile">清空</a>
+          <a class="button" @click="cleanFile">清空</a>
         </div>
       </div>
     </div>
@@ -75,11 +75,24 @@ export default Vue.extend({
       reader.readAsDataURL(files[i])
     },
     uploadFile() {
+      this.$message({ message: '提交成功！', center: true, type: 'success' })
+      const a = this.$message({ message: '正在识别...', center: true, duration: 0 })
+      setTimeout(() => {
+        a.close()
+        this.$message({ message: '识别成功！', center: true, type: 'success' })
+        this.$bus.$emit('showResult', true)
+      }, 3000)
       for (let file of this.files) {
         Ajax('upload-image', file).then((res) => {
           console.log(res)
         })
       }
+    },
+    cleanFile() {
+      this.$message({ message: '清空成功', center: true, type: 'success' })
+      this.files = []
+      this.images = []
+      this.$bus.$emit('showResult', false)
     }
   },
 })

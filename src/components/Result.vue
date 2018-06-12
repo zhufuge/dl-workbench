@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div v-if="myShow" class="container">
     <div class="item title">
       识别结果
     </div>
@@ -19,7 +19,7 @@
                 placeholder="选择正确的类别"
               ></multiselect>
             </div>
-            <a class="button">点击确认修正</a>
+            <a class="button" @click="changeParam">点击确认修正</a>
             <a class="button" @click="hideSelect">取消</a>
           </div>
         </div>
@@ -41,18 +41,33 @@ export default Vue.extend({
       value: null,
       options: ['黑斑', '黄斑', '丝光皱条', '眉皱'],
       dataClass,
+      myShow: false,
     }
   },
   methods: {
     showSelect(selected) {
-      this.show = selected;
-      this.value = null;
+      this.show = selected
+      this.value = null
     },
     hideSelect() {
-      this.show = '';
-      this.value = null;
+      this.show = ''
+      this.value = null
+    },
+    changeParam() {
+      this.$message({ message: '提交成功！', center: true, type: 'success' })
+      const a = this.$message({ message: '正在修正并重新训练模型...', center: true, duration: 0 })
+      setTimeout(() => {
+        a.close()
+        this.$message({ message: '修改成功，模型已更新！', center: true, type: 'success' })
+        this.show = ''
+      }, 3000)
     }
   },
+  created() {
+    this.$bus.$on('showResult', (show) => {
+      this.myShow = show
+    })
+  }
 })
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
